@@ -46,9 +46,17 @@ Number of classes in test = 43`
 
 4. Here's a sample of the data:
 
-<img src="examples/grayscale.jpg" width="480" alt="sample and grayscaled" />
+<img src="examples/stop.jpg" width="480" alt="sample" />
 
 
-5. Here is
+5. The street sign histogram (out of 43 types) are displayed below.
+
+Train set:
+
+<img src="examples/train_hist.png" width="480" alt="training set histogram" />
+
+Test set:
+
+<img src="examples/test_hist.png" width="480" alt="test set histogram" />
 
 ```
