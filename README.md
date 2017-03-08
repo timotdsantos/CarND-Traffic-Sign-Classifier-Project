@@ -35,6 +35,7 @@ The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](htt
 2. Validation set is taken from the training data, which is an 80-20 split.
 
 3. Here is a basic summary of the data set:
+
 `Number of training examples = 27839
 Number of testing examples = 12630
 Number of validation examples = 6960
@@ -44,7 +45,10 @@ Number of classes in validation = 43
 Number of classes in test = 43`
 
 4. Here's a sample of the data:
+
 <img src="examples/grayscale.jpg" width="480" alt="sample and grayscaled" />
 
+
+5. Here is
 
 ```
