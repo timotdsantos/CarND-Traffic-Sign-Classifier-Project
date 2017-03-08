@@ -36,19 +36,19 @@ The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](htt
 
 3. Here is a basic summary of the data set:
 
-`Number of training examples = 27839
-
-Number of testing examples = 12630
-
-Number of validation examples = 6960
-
-Image data shape = (32, 32, 3)
-
-Number of classes = 43
-
-Number of classes in validation = 43
-
-Number of classes in test = 43`
+    `Number of training examples = 27839
+    
+    Number of testing examples = 12630
+    
+    Number of validation examples = 6960
+    
+    Image data shape = (32, 32, 3)
+    
+    Number of classes = 43
+    
+    Number of classes in validation = 43
+    
+    Number of classes in test = 43`
 
 4. Here's a sample of the data:
 
@@ -84,7 +84,9 @@ The street signs have 3-color (RGB) channels and have a 32x32 dimension.
 ### **Part 3:** Model Architecture
 
 ![LeNet-5 Architecture](lenet.png)
+
 The model is based on the LeNet-5 deep neural network model.
+It consists of **5 layers.** 
 
 **Input layer** in the LeNet-5 for MNIST data was intended to take in 1-channel image. Some experiments were performed to convert the street sign images to grayscale, but the performance benefits by retaining the color of the images.
 
@@ -93,14 +95,10 @@ The model is based on the LeNet-5 deep neural network model.
 ```python
 
     conv1_W = tf.Variable(tf.truncated_normal(shape=(5, 5, n_channels, 6), mean = mu, stddev = sigma))
-    
     conv1_b = tf.Variable(tf.zeros(6))
-    
     conv1   = tf.nn.conv2d(x, conv1_W, strides=[1, 1, 1, 1], padding='VALID') + conv1_b
 ```
 **Layer 2:** Convolutional. Output = 10x10x16.
-
-The LeNet-5 consists of **5 layers.** 
 
 **Layer 3:** Fully Connected. Input = 400. Output = 120.
 
@@ -129,16 +127,38 @@ logits = tf.matmul(fc2, fc3_W) + fc3_b
 return logits,conv1,conv2,fc0,fc1,fc2,fc3_W
 ```
 
+### **Part 4:** Training and Evaluating the Model
 
-The submission provides details of the characteristics and qualities of the architecture, such as the type of model used, the number of layers, the size of each layer. Visualizations emphasizing particular qualities of the architecture are encouraged.
+The model was trained with the following parameters:
 
-**Model Training** involves the following:
-The submission describes how the model was trained by discussing what optimizer was used, batch size, number of epochs and values for hyperparameters.
+```
+**EPOCHS** = 50
+**BATCH_SIZE** = 128
+**optimizer** :Adam Optimizer
+```
 
-**Solution Approach** involves the following:
-The submission describes the approach to finding a solution. Accuracy on the validation set is 0.93 or greater.
+The result of the training yielded around **97% validation accuracy**
 
-### **Part 3:** Testing the Model on New Images
+```
+.
+.
+.
+EPOCH 48 ...
+Validation Accuracy = 0.966
+
+EPOCH 49 ...
+Validation Accuracy = 0.965
+
+EPOCH 50 ...
+Validation Accuracy = 0.969
+```
+
+Evaluating the data on the holdout/test-set yielded a modest test accuracy of:
+
+```Test Accuracy = 0.876```
+
+
+### **Part 4:** Testing the Model on New Images
 Acquiring New Images
 The submission includes five new German Traffic signs found on the web, and the images are visualized. Discussion is made as to any particular qualities of the images or traffic signs in the images that may be of interest, such as whether they would be difficult for the model to classify.
 
