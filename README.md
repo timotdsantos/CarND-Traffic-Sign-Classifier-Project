@@ -20,6 +20,7 @@ The goals / steps of this project are the following:
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
+
 ---
 ### Dependencies
 This lab requires:
@@ -30,40 +31,42 @@ The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](htt
 
 ### **Part 1:** Basic Summary of the Data Set 
 
-1. This is a pickled dataset in which the data was already resized to 32x32 images. It contains a training, validation and test set. It is not included in the repository, but should be downloaded [here](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5898cd6f_traffic-signs-data/traffic-signs-data.zip).
+* This is a pickled dataset in which the data was already resized to 32x32 images. It contains a training, validation and test set. It is not included in the repository, but should be downloaded [here](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5898cd6f_traffic-signs-data/traffic-signs-data.zip).
 
-2. Validation set is taken from the training data, which is an 80-20 split.
+* Validation set is taken from the training data, which is an 80-20 split.
 
-3. Here is a basic summary of the data set:
+* Here is a basic summary of the data set:
 
-    `Number of training examples = 27839
-    
-    Number of testing examples = 12630
-    
-    Number of validation examples = 6960
-    
-    Image data shape = (32, 32, 3)
-    
-    Number of classes = 43
-    
-    Number of classes in validation = 43
-    
-    Number of classes in test = 43`
+        `Number of training examples = 27839
+        
+        Number of testing examples = 12630
+        
+        Number of validation examples = 6960
+        
+        Image data shape = (32, 32, 3)
+        
+        Number of classes = 43
+        
+        Number of classes in validation = 43
+        
+        Number of classes in test = 43`
+        
 
-4. Here's a sample of the data:
+* Here's a sample of the data:
 
-<img src="examples/stop.jpg" width="480" alt="sample" />
+<img src="examples/stop.jpg" width="200" alt="sample" />
 
 
-5. The street sign histogram (out of 43 types) are displayed below.
+* The street sign histogram (out of 43 types) are displayed below.
 
 Train set:
 
-<img src="examples/train_hist.png" width="480" alt="training set histogram" />
+<img src="examples/train_hist.png" width="200" alt="training set histogram" />
 
 Test set:
 
-<img src="examples/test_hist.png" width="480" alt="test set histogram" />
+<img src="examples/test_hist.png" width="200" alt="test set histogram" />
+
 
 ### **Part 2:** Input Data Preprocessing
 
@@ -78,7 +81,7 @@ Test set:
 
 The street signs have 3-color (RGB) channels and have a 32x32 dimension. 
 
-<img src="examples/image_plot.png" width="480" alt="input on grid" />
+<img src="examples/image_plot.png" width="200" alt="input on grid" />
 
 
 ### **Part 3:** Model Architecture
@@ -158,7 +161,39 @@ Evaluating the data on the holdout/test-set yielded a modest test accuracy of:
 ```Test Accuracy = 0.876```
 
 
-### **Part 4:** Testing the Model on New Images
+### **Part 5:** Testing the Model on New Images
+
+Upon applying the model on the five images downloaded from the internet, the results were as follows:
+
+```
+Test Accuracy = 0.800
+
+predicted:  [31] 	truth:  31
+predicted:  [13] 	truth:  13
+predicted:  [25] 	truth:  25
+predicted:  [31] 	truth:  22
+predicted:  [17] 	truth:  17
+```
+
+The one misclassification was the image **22[Bumpy road]** which was predicted as **31[Wild animals crossing]**.
+
+<img src="sample/25.jpg" width="100" alt="Bumpy Road" />
+<img src="sample/31.jpg" width="100" alt="Wild animals crossing" />
+
+Inspecting the top-5 softmax values for image 25, we see the following result:
+
+```prob:  [ 5.7166338   5.20867634  5.18498468  4.41801071  3.6251452 ] label:  [31 24 22 26 27] truth:  22```
+
+One observation is that the softmax score and the top 5 scores are quite low, and the top 3 values themselves are very close. Visually inspecting the first 2 misclassifications (top 1[#31 - Wild animals crossing] and top 2[#24 - Road narrows on the right]), they are quite similar in form -- red triangular signs, with some black figures inside.
+
+<img src="sample/31.jpg" width="100" alt="Wild animals crossing" />
+<img src="sample/24.jpg" width="100" alt="Road narrows on the right" />
+
+Another thing to consider is the amount of training data available for those classes, looking back at the histogram we see that the class **22[Bumpy road]**  is not well represented.
+
+<img src="examples/train_hist.png" width="200" alt="training set histogram" />
+
+
 Acquiring New Images
 The submission includes five new German Traffic signs found on the web, and the images are visualized. Discussion is made as to any particular qualities of the images or traffic signs in the images that may be of interest, such as whether they would be difficult for the model to classify.
 
