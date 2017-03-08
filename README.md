@@ -193,7 +193,7 @@ Inspecting the top-5 softmax values for image 25, we see the following result:
 One observation is that the softmax score and the top 5 scores are quite low. Another is that the top 3 values themselves are very close. Visually inspecting the first 2 misclassifications (**top 1[#31 - Wild animals crossing]** and **top 2[#24 - Road narrows on the right]**), they are quite similar in form -- red triangular signs, with some black figures inside.
 
 <img src="sample/31.jpg" width="100" alt="Wild animals crossing" />
-<img src="examples/24.jpg" width="100" alt="Road narrows on the right" />
+<img src="examples/24.png" width="100" alt="Road narrows on the right" />
 
 Another thing to consider is the amount of training data available for those classes. Looking back at the histogram we see that the class **22[Bumpy road]**  is not well represented.
 
