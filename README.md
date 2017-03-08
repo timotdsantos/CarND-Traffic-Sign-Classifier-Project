@@ -37,7 +37,7 @@ The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](htt
 
 * Here is a basic summary of the data set:
 
-        `Number of training examples = 27839
+        Number of training examples = 27839
         
         Number of testing examples = 12630
         
@@ -49,7 +49,7 @@ The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](htt
         
         Number of classes in validation = 43
         
-        Number of classes in test = 43`
+        Number of classes in test = 43
         
 
 * Here's a sample of the data:
@@ -165,45 +165,36 @@ Evaluating the data on the holdout/test-set yielded a modest test accuracy of:
 
 Upon applying the model on the five images downloaded from the internet, the results were as follows:
 
-```
-Test Accuracy = 0.800
 
-predicted:  [31] 	truth:  31
-predicted:  [13] 	truth:  13
-predicted:  [25] 	truth:  25
-predicted:  [31] 	truth:  22
-predicted:  [17] 	truth:  17
-```
+```Test Accuracy = 0.800```
+
+<img src="examples/31.jpg" width="100" alt="Bumpy Road" /> ```predicted:  [31] 	truth:  31```
+<img src="examples/13.jpg" width="100" alt="Bumpy Road" /> ```predicted:  [13] 	truth:  13```
+<img src="examples/25.jpg" width="100" alt="Bumpy Road" /> ```predicted:  [25] 	truth:  25```
+<img src="examples/22.jpg" width="100" alt="Bumpy Road" /> ```predicted:  [31] 	truth:  22```
+<img src="examples/17.jpg" width="100" alt="Bumpy Road" /> ```predicted:  [17] 	truth:  17```
+
 
 The one misclassification was the image **22[Bumpy road]** which was predicted as **31[Wild animals crossing]**.
 
-<img src="sample/25.jpg" width="100" alt="Bumpy Road" />
+
+<img src="sample/22.jpg" width="100" alt="Bumpy Road" />
 <img src="sample/31.jpg" width="100" alt="Wild animals crossing" />
+
 
 Inspecting the top-5 softmax values for image 25, we see the following result:
 
 ```prob:  [ 5.7166338   5.20867634  5.18498468  4.41801071  3.6251452 ] label:  [31 24 22 26 27] truth:  22```
 
-One observation is that the softmax score and the top 5 scores are quite low, and the top 3 values themselves are very close. Visually inspecting the first 2 misclassifications (top 1[#31 - Wild animals crossing] and top 2[#24 - Road narrows on the right]), they are quite similar in form -- red triangular signs, with some black figures inside.
+One observation is that the softmax score and the top 5 scores are quite low. Another is that the top 3 values themselves are very close. Visually inspecting the first 2 misclassifications (**top 1[#31 - Wild animals crossing]** and **top 2[#24 - Road narrows on the right]**), they are quite similar in form -- red triangular signs, with some black figures inside.
 
 <img src="sample/31.jpg" width="100" alt="Wild animals crossing" />
 <img src="sample/24.jpg" width="100" alt="Road narrows on the right" />
 
-Another thing to consider is the amount of training data available for those classes, looking back at the histogram we see that the class **22[Bumpy road]**  is not well represented.
+Another thing to consider is the amount of training data available for those classes. Looking back at the histogram we see that the class **22[Bumpy road]**  is not well represented.
 
 <img src="examples/train_hist.png" width="200" alt="training set histogram" />
 
 
-Acquiring New Images
-The submission includes five new German Traffic signs found on the web, and the images are visualized. Discussion is made as to any particular qualities of the images or traffic signs in the images that may be of interest, such as whether they would be difficult for the model to classify.
-
-Performance on New Images
- 	
-
-The submission documents the performance of the model when tested on the captured images. The performance on the new images is compared to the accuracy results of the test set.
-
-Model Certainty - Softmax Probabilities
-The top five softmax probabilities of the predictions on the captured images are outputted. The submission discusses how certain or uncertain the model is of its predictions.
-
-Test a Model on New Images
+ 
 ```
