@@ -183,7 +183,7 @@ The one misclassification was the image **22[Bumpy road]** which was predicted a
 
 
 <img src="sample/22.jpg" width="100" alt="Bumpy Road" />
-<img src="sample/26.png" width="100" alt="Traffic Signals" />
+<img src="examples/26.png" width="100" alt="Traffic Signals" />
 
 
 Inspecting the top-5 softmax values for the third image **#22[Bumpy Road]**, we see the following result:
@@ -196,7 +196,7 @@ Inspecting the top-5 softmax values for the third image **#22[Bumpy Road]**, we 
 
 One observation is that the top softmax score is relatively low. Another is that the top 5 values themselves are relatively closer, meaning the model is not as confident with this prediction. Visually inspecting the other 2 better softmax scores (**top 2[#19 - Dangerous curve to the left]** and **top 3[#18 - Dangerous curve to the right]**), they are also similar in form -- red triangular signs, with some black figures inside.
 
-<img src="sample/19.jpg" width="80" alt="Dangerous curve to the left" />
+<img src="examples/19.jpg" width="80" alt="Dangerous curve to the left" />
 <img src="examples/18.png" width="80" alt="Dangerous curve to the right" />
 
 Another thing to consider is the amount of training data available for those classes. Looking back at the histogram we see that the class **22[Bumpy road]**  is not well represented.
