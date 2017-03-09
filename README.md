@@ -182,8 +182,8 @@ Upon applying the model on the five images downloaded from the internet, the res
 The one misclassification was the image **22[Bumpy road]** which was predicted as **26[Traffic Signals]**.
 
 
-<img src="sample/22.jpg" width="100" alt="Bumpy Road" />
-<img src="examples/26.png" width="100" alt="Traffic Signals" />
+<img src="sample/22.jpg" width="100" height="100" alt="Bumpy Road" />
+<img src="examples/26.png" width="100" height="100" alt="Traffic Signals" />
 
 
 Inspecting the top-5 softmax values for the third image **#22[Bumpy Road]**, we see the following result:
