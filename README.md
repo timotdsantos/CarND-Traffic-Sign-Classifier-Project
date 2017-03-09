@@ -174,7 +174,7 @@ Upon applying the model on the five images downloaded from the internet, the res
 
 <img src="sample/25.jpg" width="50" alt="Bumpy Road" /> **predicted:  [25] 	truth:  25**
 
-<img src="sample/22.jpg" width="50" alt="Bumpy Road" /> **predicted:  [31] 	truth:  22**
+<img src="sample/22.jpg" width="50" alt="Bumpy Road" /> **predicted:  [26] 	truth:  22**
 
 <img src="sample/17.jpg" width="50" alt="Bumpy Road" /> **predicted:  [17] 	truth:  17**
 
