@@ -179,21 +179,25 @@ Upon applying the model on the five images downloaded from the internet, the res
 <img src="sample/17.jpg" width="50" alt="Bumpy Road" /> **predicted:  [17] 	truth:  17**
 
 
-The one misclassification was the image **22[Bumpy road]** which was predicted as **31[Wild animals crossing]**.
+The one misclassification was the image **22[Bumpy road]** which was predicted as **26[Traffic Signals]**.
 
 
 <img src="sample/22.jpg" width="100" alt="Bumpy Road" />
-<img src="sample/31.jpg" width="100" alt="Wild animals crossing" />
+<img src="sample/26.png" width="100" alt="Traffic Signals" />
 
 
-Inspecting the top-5 softmax values for image 25, we see the following result:
+Inspecting the top-5 softmax values for the third image **#22[Bumpy Road]**, we see the following result:
 
-```prob:  [ 5.7166338   5.20867634  5.18498468  4.41801071  3.6251452 ] label:  [31 24 22 26 27] truth:  22```
+```prob:  [ 0.55089307  0.18588537  0.15568347  0.09712765  0.0029154 ] label:  [26 19 18 22 24] truth:  22```
 
-One observation is that the softmax score and the top 5 scores are quite low. Another is that the top 3 values themselves are very close. Visually inspecting the first 2 misclassifications (**top 1[#31 - Wild animals crossing]** and **top 2[#24 - Road narrows on the right]**), they are quite similar in form -- red triangular signs, with some black figures inside.
 
-<img src="sample/31.jpg" width="80" alt="Wild animals crossing" />
-<img src="examples/24.png" width="80" alt="Road narrows on the right" />
+<img src="examples/bar_softmax.png" width="100" alt="Softmax Bar Chart" />
+
+
+One observation is that the top softmax score is relatively low. Another is that the top 5 values themselves are relatively closer, meaning the model is not as confident with this prediction. Visually inspecting the other 2 better softmax scores (**top 2[#19 - Dangerous curve to the left]** and **top 3[#18 - Dangerous curve to the right]**), they are also similar in form -- red triangular signs, with some black figures inside.
+
+<img src="sample/19.jpg" width="80" alt="Dangerous curve to the left" />
+<img src="examples/18.png" width="80" alt="Dangerous curve to the right" />
 
 Another thing to consider is the amount of training data available for those classes. Looking back at the histogram we see that the class **22[Bumpy road]**  is not well represented.
 
