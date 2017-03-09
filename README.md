@@ -191,12 +191,12 @@ Inspecting the top-5 softmax values for the third image **#22[Bumpy Road]**, we 
 ```prob:  [ 0.55089307  0.18588537  0.15568347  0.09712765  0.0029154 ] label:  [26 19 18 22 24] truth:  22```
 
 
-<img src="examples/bar_softmax.png" width="100" alt="Softmax Bar Chart" />
+<img src="examples/bar_softmax.png" width="400" alt="Softmax Bar Chart" />
 
 
 One observation is that the top softmax score is relatively low. Another is that the top 5 values themselves are relatively closer, meaning the model is not as confident with this prediction. Visually inspecting the other 2 better softmax scores (**top 2[#19 - Dangerous curve to the left]** and **top 3[#18 - Dangerous curve to the right]**), they are also similar in form -- red triangular signs, with some black figures inside.
 
-<img src="examples/19.jpg" width="80" alt="Dangerous curve to the left" />
+<img src="examples/19.png" width="80" alt="Dangerous curve to the left" />
 <img src="examples/18.png" width="80" alt="Dangerous curve to the right" />
 
 Another thing to consider is the amount of training data available for those classes. Looking back at the histogram we see that the class **22[Bumpy road]**  is not well represented.
