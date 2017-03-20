@@ -1,9 +1,9 @@
-## Project: Build a Traffic Sign Recognition Program
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+## Traffic Sign Recognition Program
+
 
 Overview
 ---
-In this project, deep neural networks and convolutional neural networks were used to classify traffic signs. A model was trained and validated so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model was trained, the model was used to label images of German traffic signs found on the web.
+In this project, deep neural networks and convolutional neural networks in TensorFlow were used to classify traffic signs. A model was trained and validated so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model was trained, the model was used to label images of German traffic signs found on the web.
 
 
 Three main files are submitted here: a file containing project code and a file containing a brief write up explaining the solution. 
