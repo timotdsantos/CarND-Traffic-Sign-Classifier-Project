@@ -203,6 +203,10 @@ Another thing to consider is the amount of training data available for those cla
 
 <img src="examples/train_hist.png" width="200" alt="training set histogram" />
 
+Another interesting observation is the kind of features that were self-learned. Different layers seem to learn different aspects of an image from general (shapes, contours) to specific details (lines, texture).
 
+<img src="examples/feat_map1.JPG" width="600" alt="" />
+
+<img src="examples/feat_map2.JPG" width="600" alt="" />
  
 ```
