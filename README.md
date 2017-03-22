@@ -23,11 +23,11 @@ The goals / steps of this project are the following:
 
 ---
 ### Dependencies
-This lab requires:
+To minimize setup time, required libraries are already available when you use:
 
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
+* [CarND Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
 
-The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
+The project enviroment can be created with the CarND Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
 
 ### **Part 1:** Basic Summary of the Data Set 
 
